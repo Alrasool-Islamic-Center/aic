@@ -36,11 +36,9 @@ class DonationController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->input('phoneNumber'));
+        $phoneNumber = $request->input('phoneNumber');
         
-        Phone::firstOrCreate(['number' => $request->input('phoneNumber')]);
-        
-        $myPhone = Phone::where("number", $request->input('phoneNumber'))->first();
+        $myPhone = Phone::firstOrCreate(['number' => $phoneNumber]);
 
         dd($myPhone);
         return redirect('/');
