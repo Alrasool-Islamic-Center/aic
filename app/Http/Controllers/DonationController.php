@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Donation;
+use App\Phone;
 use Illuminate\Http\Request;
 
 class DonationController extends Controller
@@ -35,7 +36,13 @@ class DonationController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->input());
+        // dd($request->input('phoneNumber'));
+        
+        Phone::firstOrCreate(['number' => $request->input('phoneNumber')]);
+        
+        $myPhone = Phone::where("number", $request->input('phoneNumber'))->first();
+
+        dd($myPhone);
         return redirect('/');
     }
 
