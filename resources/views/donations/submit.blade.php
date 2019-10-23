@@ -1,5 +1,5 @@
 @section('title') 
-Neon - Sparkline Chart
+AIC - Basic Donation Form
 @endsection
 @extends('layouts.main')
 @section('style')
