@@ -34,9 +34,10 @@ AIC - Basic Donation Form
                     <h6 class="card-subtitle">Phone number of the Donor</h6>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="/donation" method="POST">
+                        @csrf
                         <div class="form-group">
-                            <input type="tel" class="form-control" name="inputTel" id="inputTel" placeholder="+1 9876543210">
+                            <input type="tel" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="+1 9876543210">
                             <small id="emailHelp" class="form-text text-muted">Never share phone numbers of donors outside of this form.</small>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>

@@ -248,3 +248,7 @@ Route::get('/ui-kits-typography', function () {
 Route::get('/donations/submit', function () {
     return view('donations.submit');
 });
+
+
+// donations
+Route::post('/donation', 'DonationController@store');
