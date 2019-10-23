@@ -148,7 +148,7 @@
     <!-- Start XP Footerbar -->
     <div class="xp-footerbar">
         <footer class="footer">
-            <p class="mb-0">© 2019 Neon - All Rights Reserved.</p>
+            <p class="mb-0">© Alrasool Islamic Center in Taylorsville, UT - All Rights Reserved.</p>
         </footer>
     </div>
     <!-- End XP Footerbar -->
