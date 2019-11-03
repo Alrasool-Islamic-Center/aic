@@ -34,11 +34,17 @@ AIC - Basic Donation Form
                     <h6 class="card-subtitle">Phone number of the Donor</h6>
                 </div>
                 <div class="card-body">
-                    <form action="/donation" method="POST">
+                    <form action="/donation" method="POST" class="xp-form-validate needs-validation">
                         @csrf
                         <div class="form-group">
-                            <input type="tel" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="+1 9876543210">
-                            <small id="emailHelp" class="form-text text-muted">Never share phone numbers of donors outside of this form.</small>
+                            <input type="text" class="form-control" id="val-phoneus" name="phoneNumber" placeholder="+1 9876543210" required>
+                            @if (session('not_valid'))
+                            <div></div>
+                            <div class="text-danger">
+                                please provide a valid phone number
+                            </div>
+                            @endif
+                            <small id="phoneDisclaimer" class="form-text text-muted">Never share phone numbers of donors outside of this form.</small>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -49,8 +55,3 @@ AIC - Basic Donation Form
 </div>
 <!-- End XP Contentbar -->
 @endsection
-@section('script')
-<!-- Form Step JS -->
-<script src="{{ asset('assets/plugins/jquery-step/jquery.steps.min.js') }}"></script>
-<script src="{{ asset('assets/js/init/form-step-init.js') }}"></script>
-@endsection 

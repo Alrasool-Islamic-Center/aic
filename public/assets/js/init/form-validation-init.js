@@ -1,6 +1,6 @@
 "use strict";
+console.log("Hi");
 $(document).ready(function() {    
-
     /* -----  Form - Validation ----- */
      window.addEventListener('load', function() {
        var forms = document.getElementsByClassName('needs-validation');

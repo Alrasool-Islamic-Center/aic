@@ -12,7 +12,8 @@ $(document).ready(function() {
             jQuery(e).closest(".form-group").removeClass("is-invalid").addClass("is-invalid")
         },
         success: function(e) {
-            jQuery(e).closest(".form-group").removeClass("is-invalid"), jQuery(e).remove()
+            jQuery(e).closest(".form-group").removeClass("is-invalid");
+            jQuery(e).remove();
         },
         rules: {
             "val-username": {
@@ -53,7 +54,8 @@ $(document).ready(function() {
                 url: !0
             },
             "val-phoneus": {
-                required: !0
+                required: !0,
+                phoneUS: !0
             },
             "val-digits": {
                 required: !0,
@@ -80,6 +82,10 @@ $(document).ready(function() {
                 required: "Please provide a password",
                 minlength: "Your password must be at least 5 characters long"
             },
+            "phoneNumber": {
+                required: "Please provide a US phone number",
+                phoneUS: "Not a valid US phone"
+            },
             "val-confirm-password": {
                 required: "Please provide a password",
                 minlength: "Your password must be at least 5 characters long",
@@ -91,7 +97,10 @@ $(document).ready(function() {
             "val-skill": "Please select a skill!",
             "val-currency": "Please enter a price!",
             "val-website": "Please enter your website!",
-            "val-phoneus": "Please enter a US phone!",
+            "val-phoneus": {
+                required: "Please enter a US phone!",
+                phoneUS: "Not a valid US number, valid example: 1234567890"
+            },
             "val-digits": "Please enter only digits!",
             "val-number": "Please enter a number!",
             "val-range": "Please enter a number between 1 and 5!",

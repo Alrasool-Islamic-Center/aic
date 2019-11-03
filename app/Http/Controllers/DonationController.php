@@ -37,10 +37,9 @@ class DonationController extends Controller
     public function store(Request $request)
     {
         $phoneNumber = $request->input('phoneNumber');
-        
-        $myPhone = Phone::firstOrCreate(['number' => $phoneNumber]);
-
-        dd($myPhone);
+        if(!preg_match('/^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/', $phoneNumber))
+            return redirect('/donations/submit')->with('not_valid', true);
+        Phone::firstOrCreate(['number' => $phoneNumber]);
         return redirect('/');
     }
 
