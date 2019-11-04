@@ -249,6 +249,8 @@ Route::get('/donations/submit', function () {
     return view('donations.submit');
 });
 
-
 // donations
 Route::post('/donation', 'DonationController@store');
+
+// sms donations
+Route::post('/donation/process', "DonationsController@recieveDonation");
