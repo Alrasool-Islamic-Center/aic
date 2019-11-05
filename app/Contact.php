@@ -4,12 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Phone extends Model
+class Contact extends Model
 {
     protected $fillable = [
         'id',
-        'number',
+        'type',
+        'value',
         'member_id',
-        'member_id',
+        'deleted_at',
     ];
 }

@@ -18,8 +18,25 @@ class DonationsController extends Controller
     {
         $from = $request->input("From");
         $body = $request->input("Body");
+        $elements = array_filter(explode(" ", $body), function($k) {
+            return $k !== "";
+        });
+        [$transType] = $elements;
+        $testBody = "test Text";
+        if ($respBody == "RCVD") {
+            [, $donorPhone, $donationAmount, $projectType] = $elements;
+            
+            $respBody = "money recieved";
+        } elseif ($transType == "DEPO") {
+            $respBody = "depositing money";
+        } elseif ($transType == "MY$$") {
+            $respBody = "here is your cash balance";
+        } else {
+            $respBody = "sorry but you suck";
+        };
+
         // parse the body of the message here
-        return $this->sendMessage("HELLO", $from);
+        return $this->sendMessage($respBody, $from);
     }
 
      /**
