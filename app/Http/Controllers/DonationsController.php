@@ -22,9 +22,9 @@ class DonationsController extends Controller
             return $k !== "";
         });
         [$transType] = $elements;
-        $testBody = "test Text";
-        if ($respBody == "RCVD") {
-            [, $donorPhone, $donationAmount, $projectType] = $elements;
+        $respBody = "test Text";
+        if ($transType == "RCVD") {
+            // [, $donorPhone, $donationAmount, $projectType] = $elements;
             
             $respBody = "money recieved";
         } elseif ($transType == "DEPO") {
@@ -32,7 +32,7 @@ class DonationsController extends Controller
         } elseif ($transType == "MY$$") {
             $respBody = "here is your cash balance";
         } else {
-            $respBody = "sorry but you suck";
+            $respBody = "sorry but this is not a valid transaction";
         };
 
         // parse the body of the message here
