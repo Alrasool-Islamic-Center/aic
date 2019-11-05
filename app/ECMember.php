@@ -13,6 +13,5 @@ class ECMember extends Model
         'phone_number',
         'email',
         'is_active',
-        'deleted_at',
     ];
 }

@@ -14,6 +14,6 @@ class DonationReceiver extends Model
         "email",
         "is_ec_member",
         "is_active",
-        'deleted_at',
+        "deleted_at",
     ];
 }

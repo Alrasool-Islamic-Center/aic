@@ -11,6 +11,5 @@ class Contact extends Model
         'type',
         'value',
         'member_id',
-        'deleted_at',
     ];
 }

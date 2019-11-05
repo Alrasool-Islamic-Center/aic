@@ -15,6 +15,13 @@ class CreateDonationReceiversTable extends Migration
     {
         Schema::create('donation_receivers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('phone_number');
+            $table->string('email');
+            $table->boolean('is_active');
+            $table->boolean('is_ec_member');
+            $table->softDeletesTz();
             $table->timestamps();
         });
     }
