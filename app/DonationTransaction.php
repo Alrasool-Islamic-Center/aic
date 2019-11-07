@@ -8,8 +8,9 @@ class DonationTransaction extends Model
 {
     protected $fillable = [
         "id",
-        "donation_reciever_id",
+        "donation_receiver_id",
         "type",
         "amount",
+        "donation_id",
     ];
 }

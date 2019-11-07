@@ -19,7 +19,7 @@ class CreateECMembersTable extends Migration
             $table->string('last_name');
             $table->string('phone_number');
             $table->string('email');
-            $table->boolean('is_active');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

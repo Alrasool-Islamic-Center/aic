@@ -18,9 +18,9 @@ class CreateDonationsTable extends Migration
             $table->integer('contact_id');
             $table->integer('member_id')->nullable();
             $table->integer('donation_receiver_id');
-            $table->integer('reciept_template_id');
-            $table->integer('aic_notification_template_id');
-            $table->string('project');
+            $table->integer('reciept_template_id')->nullable();
+            $table->integer('aic_notification_template_id')->nullable();
+            $table->string('donation_project_id');
             $table->float('amount');
             $table->boolean('ec_notified')->default(false);
             $table->timestampsTz();

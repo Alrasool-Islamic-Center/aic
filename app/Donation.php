@@ -12,7 +12,7 @@ class Donation extends Model
         'donation_receiver_id',
         'reciept_template_id',
         'aic_notification_template_id',
-        'project',
+        'donation_project_id',
         'amount',
         'member_id',
         'ec_notified',
