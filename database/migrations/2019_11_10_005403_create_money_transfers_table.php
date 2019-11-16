@@ -3,9 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\DonationProject;
 
-class CreateDonationProjectsTable extends Migration
+class CreateMoneyTransfersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +13,15 @@ class CreateDonationProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('donation_projects', function (Blueprint $table) {
+        Schema::create('money_transfers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->nullable();
+            $table->string('transferor_phone');
+            $table->string('transferee_phone');
+            $table->string('amount');
+            $table->string('state');
+            $table->string('unique_id');
             $table->timestamps();
         });
-        DonationProject::insert([
-            ['name' => "Sunday School"],
-            ['name' => "Food and Services"]
-        ]);
     }
 
     /**
@@ -32,6 +31,6 @@ class CreateDonationProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donation_projects');
+        Schema::dropIfExists('money_transfers');
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+use App\DonationReceiver;
 class CreateDonationReceiversTable extends Migration
 {
     /**
@@ -24,6 +24,22 @@ class CreateDonationReceiversTable extends Migration
             $table->softDeletesTz();
             $table->timestamps();
         });
+        DonationReceiver::insert([
+            [
+                'first_name'    => 'Mohamed',
+                'last_name'     => 'Alsoudani',
+                'phone_number'  => '+12083160850',
+                'email'         => 'mr.hassuny@gmail.com',
+                'is_ec_member'  => true
+            ],
+            [
+                'first_name'    => 'Test',
+                'last_name'     => 'User',
+                'phone_number'  => '+16086181996',
+                'email'         => 'test@example.com',
+                'is_ec_member'  => true
+            ]
+        ]);
     }
 
     /**

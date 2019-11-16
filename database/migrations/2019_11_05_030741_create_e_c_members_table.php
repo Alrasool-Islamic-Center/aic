@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\ECMember;
 
 class CreateECMembersTable extends Migration
 {
@@ -22,6 +23,22 @@ class CreateECMembersTable extends Migration
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
+        ECMember::insert([
+            [
+                'first_name'    => 'Mohamed',
+                'last_name'     => 'Alsoudani',
+                'phone_number'  => '+12083160850',
+                'email'         => 'mr.hassuny@gmail.com',
+                'is_active'     => true
+            ],
+            [
+                'first_name'    => 'Test',
+                'last_name'     => 'User',
+                'phone_number'  => '+16086181996',
+                'email'         => 'mr.hassuny@gmail.com',
+                'is_active'     => true
+            ]
+        ]);
     }
 
     /**
